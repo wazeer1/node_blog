@@ -13,10 +13,10 @@ const blogSchema = new Schema({
     },
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User', // Reference to the User model
+      ref: 'User', 
       required: true,
     },
-    // You can add more blog fields as needed
+   
   });
   
   const Blog = mongoose.model('Blog', blogSchema);

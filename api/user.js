@@ -6,7 +6,6 @@ const User = require("../user/schemas");
 
 const router = express.Router();
 
-// User Registration
 router.post('/register', async (req, res) => {
     try {
       const { name, email, password } = req.body;
@@ -49,7 +48,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ userId: user._id }, "your_secret_key"); // Change 'your_secret_key' to a secure secret key
+    const token = jwt.sign({ userId: user._id }, "your_secret_key"); 
     res.json({ token });
   } catch (error) {
     res.status(500).json({ error: error.message });

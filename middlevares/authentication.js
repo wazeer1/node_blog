@@ -9,14 +9,14 @@ const verifyToken = (req, res, next) => {
       const bearerToken = bearerHeader.split(' ')[1];
       jwt.verify(bearerToken, 'your_secret_key', (err, authData) => {
         if (err) {
-          res.sendStatus(403); // Forbidden
+          res.sendStatus(403); 
         } else {
-          req.user = authData; // Set the authenticated user information in the request object
+          req.user = authData; 
           next();
         }
       });
     } else {
-      res.sendStatus(401); // Unauthorized
+      res.sendStatus(401);
     }
   };
 
